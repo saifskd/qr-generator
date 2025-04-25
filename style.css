@@ -75,13 +75,11 @@ span{
 }
 
 .download_btn{
-     background-color: rgba(218, 112, 214, 0.774);
+    border: 2px solid orchid;
     font-size: 20px;
     padding: 10px 20px;
-    /* width: 24%; */
     border-radius: 10px;
-    outline: 0;
-    border: 0;
+    background-color: transparent;
     cursor: pointer;
     color: rgb(255, 255, 255);
     margin-top: 20px;
@@ -109,7 +107,7 @@ margin-top: 20px;
     border: 4px solid rgb(255, 255, 255);
 border-radius: 4px;
 height: 50%;
-width: 50%;
+width: 60%;
 }
 
 .input_box{
@@ -128,6 +126,14 @@ width: 50%;
     font-size: 30px;
 } 
 
+#search-form input{
+    width: 250px;
+}
+
+#qrImage{
+    width: 100%;
+}
+
 span{
     font-size: 40px;
 }
@@ -142,5 +148,12 @@ span{
     font-size: 18px;
 padding: 10px;
 }
+
+.download_btn{
+    font-size: 10px;
+      padding: 5px 10px;
+}
+
+
 
 }
