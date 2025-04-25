@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main-div">
+    <div class="main_div_sub">
+        <h1>QR Code <span>Generator</span></h1>
+        <div action="" id="search-form">
+<div class="input_box">
+                <input type="text" id="qrText" placeholder="Enter anything here...">
+                <button onclick="generateQr()">Generate</button>
+</div>
+<div class="men_img_box">
+                     <img src="https://storage.googleapis.com/support-kms-prod/mQmcrC93Ryi2U4x5UdZNeyHQMybbyk71yCVm" id="qrImage" alt="">
+</div>
+        </div>
+ <button class="download_btn" onclick="downloadImage()">Download QR</button>
+
+        </div>
+
+
+
+
+    <script>
+    let imgBox = document.getElementById('imgBox');
+    let qrImage = document.getElementById('qrImage');
+    let qrText = document.getElementById('qrText');
+
+    function generateQr() {
+        if (qrText.value.lenth > 0){
+              qrImage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="
+                + qrText.value;
+        };
+                
+        qrImage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="
+            + qrText.value;
+    };
+
+
+
+
+        function downloadImage() {
+      const img = document.getElementById("qrImage");
+      const imageUrl = img.src;
+
+      const a = document.createElement('a');
+      a.href = imageUrl;
+      a.download = 'downloaded-image.jpg'; // or use Date.now() for unique names
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+    </script>
+</body>
+
+</html>
